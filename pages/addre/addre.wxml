@@ -1,0 +1,8 @@
+<view class='tall'>
+  <text class='te'>您的收货地址：</text>
+  
+  <navigator url='../uaddr/uaddr' class='tbn' bindtap='add'>新增收货地址：</navigator>
+  <view class='adre' wx:for='{{add}}' wx:for-item='lis' wx:key='lis'><text class='tad'>{{lis.detaaddr+'.'+lis.addr}}</text>
+    <view class='bon' data-id='{{lis.id}}' bindtap='remove'>移除</view>
+  </view>
+</view>

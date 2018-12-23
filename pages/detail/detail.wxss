@@ -1,0 +1,211 @@
+page {
+    background-color: #f8f8f8;
+    height: 100%;
+    font-size: 32rpx;
+    line-height: 1.6;
+}
+
+.page-body {
+    /* padding-top: 60rpx; */
+}
+
+.page-section swiper {
+    width: 100%;
+    height: 420rpx;
+}
+.swiper_img{
+    width: 100%;
+    height: 420rpx;
+}
+
+
+/* 商品名称 */
+
+.detailTitle {
+    width: 95%;
+    height: 100rpx;
+    margin: 5rpx auto;
+    overflow: hidden;
+    letter-spacing: 2rpx;
+    line-height: 50rpx;
+    font-size: 15px;
+}
+
+.priceAndcollect {
+    width: 95%;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.detailPrice {
+    width: 40%;
+    height: 100%;
+    margin-top: 5px;
+}
+
+.now {
+    color: red;
+    font-size: 28px;
+    line-height: 90%;
+}
+
+.before {
+    color: gray;
+    font-size: 14px;
+    text-decoration: line-through;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+   
+}
+
+/* 收藏 */
+
+.detailCollect {
+    width: 20%;
+    height: 80%;
+    position: absolute;
+    /* border: 1px solid rebeccapurple; */
+    right: 0rpx;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'sans-serif;';
+    letter-spacing: 5rpx;
+    background-color: rgba(252, 198, 0, 0.8);
+    transition: 50%;
+    line-height: 80rpx;
+    color: rgb(248, 248, 248);
+}
+
+.purchase {
+    width: 100%;
+    height: 100rpx;
+    /* border: 1px solid red;     */
+    margin-top: 5rpx;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    line-height: 100rpx;
+    background-color: #fff;
+}
+
+.purchNumber {
+    width: 40%;
+    font-size: 16px;
+    letter-spacing: 2rpx;
+    text-align: center;
+}
+
+/*地址信息*/
+/* .addre{
+  display: flex;
+  justify-content: space-between;
+  width: 420rpx;
+  height: 72rpx;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  /* border: 1px solid black; */
+/* }
+
+.prov,.city,.cside {
+    margin-left: 10rpx;
+    width: 130rpx;
+    height: 72rpx;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 1.1em;
+    line-height: 72rpx;
+    /* text-align: center; */
+
+/* } */ 
+
+
+/* 数量加减 */
+
+.stepper {
+    width: 80px;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+}
+
+/*加号和减号*/
+
+.stepper text {
+    width: 19px;
+    line-height: 26px;
+    text-align: center;
+    float: left;
+}
+
+/*数值*/
+
+.stepper input {
+    width: 40px;
+    height: 26px;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    /*给中间的input设置左右边框即可*/
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+    color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+    color: #ccc;
+}
+
+/* 底部固定 */
+
+.pageBottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 120rpx;
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    letter-spacing: 5prx;
+    
+}
+.shop, .service {
+    border-top: 1px solid #c3c3c3;
+    border-right: 1px solid #c3c3c3;
+    width: 20%;
+    height: 100%;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+.buy, .addcar {
+    /* border: 1px solid red; */
+    width: 30%;
+    line-height: 120rpx;
+    height: 100%;
+    color: #f8f8f8;
+    letter-spacing: 2rpx;
+    font-size: 15px;
+}
+
+.image_detail {
+  width: 100%;
+  margin: 10rpx 0;
+}

@@ -1,0 +1,43 @@
+<view class="main">
+<!-- 购物车列表 -->
+    <view wx:if="{{hasList}}">
+        <view class="cart-box">
+            <view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}">
+            <!-- 是否选择，显示不同的图标 -->
+                <icon wx:if="{{item.selected}}" type="success" color="red" data-index="{{index}}" class="cart-pro-select" bindtap="selectList" />
+                <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList" />
+                <!-- 点击商品，可跳转到相应商品的详情页面 -->
+                <navigator url="../detail/detail?kid={{item.goodsid}}">
+                    <image class="cart-thumb" src="{{item.imgs}}"></image>
+                </navigator>
+
+                <text class="cart-pro-name">{{item.name}}</text>
+                <text class="cart-pro-price">￥{{item.price}}</text>
+                <!-- 数量增加减少按钮 -->
+                <view class="cart-count-box">
+                    <text class="cart-count-down" bindtap="minusCount" data-obj="{{obj}}" data-index="{{index}}">-</text>
+                    <text class="cart-count-num">{{item.num}}</text>
+                    <text class="cart-count-add" bindtap="addCount" data-index="{{index}}">+</text>
+                </view>
+                <!-- 删除按钮 -->
+                <text class="cart-del" bindtap="deleteList" data-id="{{item.id}}">移除</text>
+            </view>
+        </view>
+<!-- 底部操作栏 -->
+        <view class="cart-footer">
+            <icon wx:if="{{selectAllStatus}}" type="success_circle" color="#fff" class="total-select" bindtap="selectAll" />
+            <icon wx:else type="circle" color="#fff" class="total-select" bindtap="selectAll" />
+            <view class="crash">
+                <navigator>
+                去结算
+                </navigator>
+            </view>
+            <text style='font-size:15px;position:absolute;top:7rpx;left:90rpx'>全选</text>
+            <!-- 总的价格 -->
+            <text class="cart-toatl-price">合计：￥{{totalPrice}}</text>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="cart-no-data">购物车是空的哦~</view>
+    </view>
+</view>

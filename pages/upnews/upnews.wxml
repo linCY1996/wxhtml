@@ -1,0 +1,11 @@
+<view class='tall'>
+  <view class='ups' bindtap="chooseImg">
+    <!-- <image class='upimg' src='../../img/123.png'></image> -->
+    <view class="upimgs" wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+      <image class='upimgss' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+    </view>
+  </view>
+  
+  <textarea type='file' class='navtext' bindinput="bindinput" placeholder='请输入...'></textarea>
+  <button type="button" class='btns' bindtap='send'>提交</button>
+</view>

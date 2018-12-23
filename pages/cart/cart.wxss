@@ -1,0 +1,145 @@
+page{
+    background-color: #f0f0f0;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+    font-size: 32rpx;
+}
+.navigator-hover{
+    background: none;
+}
+.cart-box{
+    padding-bottom: 100rpx;
+}
+.cart-list{
+    position: relative;
+    padding: 20rpx 20rpx 20rpx 285rpx;
+    height: 200rpx;
+    border-bottom: 1rpx solid #e9e9e9;
+    background-color: #fff;
+    margin: 5px 0;
+}
+.cart-list .cart-pro-select{
+    position: absolute;
+    left: 20rpx;
+    top: 90rpx;
+    width: 45rpx;
+    height: 45rpx;
+}
+
+.cart-list .cart-thumb{
+    position: absolute;
+    top: 20rpx;
+    left: 85rpx;
+    width: 185rpx;
+    height: 185rpx;
+    
+}
+.cart-list .cart-pro-name{
+    display: inline-block;
+    width: 300rpx;
+    height: 105rpx;
+    line-height: 50rpx;
+    overflow: hidden;
+}
+.cart-list .cart-pro-price{
+    display: inline-block;
+    float: right;
+    height: 105rpx;
+    line-height: 50rpx;
+    color: red;
+    font-size: 16px;
+}
+.cart-list .cart-count-box{
+    position: absolute;
+    left: 285;
+    bottom: 20rpx;
+    width: 240rpx;
+    border: 1px solid #ccc;
+    height: 70rpx;
+    border-radius: 3px;
+    
+}
+.cart-list .cart-count-box text{
+    display: inline-block;
+    line-height: 70rpx;
+    text-align: center;
+}
+.cart-count-down,.cart-count-add{
+    width: 60rpx;
+    height: 100%;
+    text-align: center;
+    
+}
+.cart-count-down{
+ border-right: 1px solid #ccc;
+    font-size: 44rpx;
+ 
+}
+.cart-count-add{
+ border-left: 1px solid #ccc;
+    font-size: 35rpx;
+ 
+}
+.cart-count-num{
+    width: 110rpx;
+}
+.cart-del{
+    position: absolute;
+    right: 20rpx;
+    bottom: 20rpx;
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 30rpx;
+    letter-spacing: 5rpx;
+}
+/* 底部样式 */
+.cart-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    line-height: 90rpx;
+    padding:0 100rpx 0 80rpx;
+    box-sizing: border-box;
+    background: #AB956D;
+    color: #fff;
+}
+.total-select{
+    position: absolute;
+    left: 20rpx;
+    top: 25rpx;
+    width: 45rpx;
+    height: 45rpx;
+}
+.crash navigator{
+    position: absolute;
+    right: 0rpx;
+    /* top: 25rpx; */
+    width: 200rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border: 1px solid red;
+    display: block;
+    text-align: center;
+    background: #ff5e3a;                                            
+}
+.order-icon image,.order-icon navigator{
+  display: block;
+  width: 45rpx;
+  height: 45rpx;
+}
+.cart-toatl-price{
+    position: absolute;
+    left: 250rpx;
+    width: 250rpx;
+    height: 100%;
+    line-height: 100rpx;    
+}
+
+/* .cart-no-data{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+} */

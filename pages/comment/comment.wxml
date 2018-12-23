@@ -1,0 +1,26 @@
+<view class="container">
+    <!-- 评分部分 -->
+    <view class='stars'>
+        <view class='content'>
+            <image src='{{ims.imgs}}'></image>
+            <view>评分：</view>
+            <view>
+                <view wx:for="{{stars}}" wx:key="" style='background:url("{{item.flag==1?item.bgImg:item.bgfImg}}") no-repeat top; background-size:100%;' data-index="{{index}}" bindtap='score'></view>
+            </view>
+        </view>
+    </view>
+
+    <!--文本域  -->
+    <view class="weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea class="weui-textarea" bindinput="bindTextAreaChange" placeholder="我要提出建议..." style="height: 8em" value="{{info}}" maxlength="{{noteMaxLen}}" focus />
+                <view class="weui-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
+            </view>
+        </view>
+    </view>
+    <!--发布按钮  -->
+    <view class="btnSf">
+        <button bindtap="bindSubmit">发布</button>
+    </view>
+</view>

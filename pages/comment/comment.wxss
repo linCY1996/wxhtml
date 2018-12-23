@@ -1,0 +1,59 @@
+.comment1-description{
+  padding:30rpx 0;
+  display:flex;
+  flex-direction:row;
+}
+
+/* 评分部分*/
+.stars{
+  padding:85rpx 0 60rpx 273rpx;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1rpx solid #ececec;
+  background-color: #fff;
+}
+.stars image{
+  width: 190rpx;
+  height: 190rpx;
+  border: 1rpx solid #000;
+  position: absolute;
+  top: 41rpx;
+  left: 36rpx;
+}
+.stars .content view{
+  font-size: 32rpx;
+  color: #4a4a4a;
+}
+.stars .content>view:last-of-type{
+  height: 40rpx;
+  margin-top: 48rpx;
+}
+.stars .content>view:last-of-type view{
+  float: left;
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 25rpx;
+  background-size: 100% 100%;
+}
+
+
+.weui-cells_after-title{
+  width: 92%;
+  margin:0 auto;
+  border:1px solid #ddd;
+}
+
+.btnSf{
+  width: 92%;
+  margin:30rpx auto;
+  
+}
+.btnSf button{
+    background: #57B6BA;
+    color: #fff;
+}
+
+.btnSf button:active{
+  background: #5BC2C6;
+  color: #fff;
+}

@@ -1,0 +1,138 @@
+
+
+<!-- 顶部选项卡tabBar -->
+
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}
+    </text>
+</view>
+
+<!--板块一：首页   0-->
+<view hidden="{{currentTab!==0}}">
+  <!-- 轮播 -->
+  <swiper class='swiper_box' indicator-dots='{{indicatorDots}}' indicator-color='{{beforeColor}}' indicator-active-color='{{afterColor}}' circular="true" interval='{{interval}}' duration='{{duration}}' autoplay='{{autoplay}}'>
+    <view wx:for='{{swiperList}}' wx:key="swiper">
+      <swiper-item class='swiper_item'>
+        <text class='swiper_txt'>{{item.msg}}</text>
+        <image class='swiper_img' src='{{item.imgs}}'></image>
+      </swiper-item>
+    </view>
+  </swiper>
+
+  <!-- 商品标题 -->
+  <view class='productTitle'>
+    <text class='topTitle'>农家特产</text>
+    <!-- <text class='nextTitle'>PRODUCT</text> -->
+  </view>
+
+  <!-- 商品列表 -->
+  <view class='product'>
+    <!-- <navigator url='../detail/detail'> -->
+    <view class='prodList' wx:for="{{array}}" wx:for-item="list" wx:key="prodList">
+      <navigator class='navgitr' url='../detail/detail?kid={{list.id}}'>
+        <image class='prodImg' src='{{list.imgs}}'></image>
+        <view class='prodDetail'>
+          <text id='goodsNames'>{{list.name}}</text>
+          <text class='prodTitle'>{{list.msg}}</text>
+          <text class='prodPrice'> ￥：{{list.price}}</text>
+          <text class='prodnum'> Num：{{list.num}}</text>
+          <!-- <button type='button' id='btn'>立即购买</button> -->
+        </view>
+      </navigator>
+    </view>
+    <!-- </navigator> -->
+  </view>
+
+</view>
+
+<!--板块二：最新 1-->
+<view hidden="{{currentTab!==1}}" style='background-color:#f6f6f6'>
+  <!--视频达人 -->
+  <view class='supervideo' style='background-color:white'>
+    <view class='supervideoTitle'>
+      <view class='iconfont icon-liulan-copy' style='font-size:16px'>农家达人</view>
+    </view>
+    <!-- <navigator url='../personal/personal?kid={{}}'> -->
+    <!-- <vi/ew> -->
+      <navigator url='../personal/personal?kid={{supervideo.id}}' class='supervideoItem' wx:for='{{supervideoItem}}' wx:for-item='supervideoItem' wx:key='supervideoItem' >
+        <!-- <image src='{{supervideo.imgs}}'></image>
+        <view class='supervideoName'>{{supervideo.nickname}}</view> -->
+        <image class='imgsss' src='{{supervideoItem.imgs}}'></image>
+        <view class='supervideoName'>{{supervideoItem.nickname}}</view>
+        <!-- <view class='imgsss'><open-data type="userAvatarUrl"></open-data></view>
+      <view class='supervideoName'><open-data type="userNickName"></open-data></view> -->
+        <!-- </view> -->
+      </navigator>
+    <!-- </view> -->
+  </view>
+
+  <!-- 日志分享 -->
+  <view class='blog' wx:for='{{blog}}' wx:for-item='blog' wx:key='blog'>
+    <view class='blogUser'>
+      <navigator url='../personal/personal?kid={{blog.userid}}'><image src='{{blog.imgs}}'></image></navigator> 
+      <view class='blogInfo'>
+        <view style=' font-size: 15px;'>{{blog.nickname}}</view>
+        <view class='blogPlace iconfont icon-weizhi-tianchong'>{{blog.city}}</view>
+      </view>
+      <view class='blogConcern iconfont icon-guanzhu' bindtap='guan()'>关注一个</view>
+    </view>
+    <view class='blogVideo'>
+      <image src='{{blog.msgs}}' controls='true' direction=''></image>
+    </view>
+    <view class='blogContent'>{{blog.contents}}
+    </view>
+    <view class='blogbottom'>
+      {{blog.time}}
+    </view>
+  </view>
+
+</view>
+
+<!--板块三：个人中心   -->
+<view hidden="{{currentTab!==2}}">
+  <!-- 个人中心头部 -->
+  <view class='header' style='background:url(../../img/bg4.jpg) no-repeat center;width:100%;height:450rpx;'>
+    <view class='headerImage'>
+      <!-- <image src='{{imss.imgs}}'></image>
+      <text class='headeruserName'>{{imss.nickname}}</text> -->
+       <view class='imgs'><open-data type="userAvatarUrl"></open-data></view>
+      <view class='nickname'><open-data type="userNickName"></open-data></view>
+    </view>
+    <view class='headerMenu'>
+      <view class='userInf' wx:for="{{userBox}}" wx:for-item="user" wx:key="userBox">
+        <view class='userBox'>{{user.userBox}}</view>
+        <view class='userNum'>{{user.userNum}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 待付款等功能 -->
+  <view class='functionsWrap'>
+    <navigator url='../cart/cart' class='navig'>
+      <view class='functionsItem'>
+        <view class='iconfont icon-gouwuche'></view>
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>购物车</view>
+    </navigator>
+    <view class='functionsItem'>
+      <view class='iconfont icon-daifukuan'></view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>待付款</view>
+    <view class='functionsItem'>
+      <view class='iconfont icon-daishouhuo'></view>
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>待收货</view>
+    <view class='functionsItem'>
+      <view class='iconfont icon-wodedingdan'></view>我的订单</view>
+  </view>
+  <!-- 列表 -->
+  <view class='entries'>
+    <navigator url='../upnews/upnews' class='entry'>
+      <icon class='iconfont icon-webicon306'></icon>上传趣闻</navigator>
+    <navigator url='../mycommand/mycom' class='entry'>
+      <icon class='iconfont icon-comment-w'></icon>我的评价</navigator>
+    <view class='entry'>
+      <icon class='iconfont icon-shouhou'></icon>售后</view>
+    <navigator url='../addre/addre' class='entry'>
+      <icon class='iconfont icon-changeAddress'></icon>收货地址</navigator>
+    <view class='entry'>
+      <icon class='iconfont icon-shezhi'></icon>设置</view>
+  </view>
+</view>

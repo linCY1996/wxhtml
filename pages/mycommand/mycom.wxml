@@ -1,0 +1,16 @@
+<view class='tall'>
+  <view class='coms'>商品评价</view>
+
+  <view class='msgs' wx:for-items='{{ims}}' wx:key='ims'>
+    <view class='imgs'>
+      <image src='{{item.imgs}}'></image>
+    </view>
+    <view class='texts'>
+      <view class='textsch1'><b>您的评价:</b>{{item.msg}}</view>
+      <view class='times'>
+        <view class='timesch1'>{{item.time}}</view>
+        <view class='moves' data-id='{{item.id}}' bindtap='remove'>移除</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<!-- <view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}
+    </text>
+</view> -->
+
+
+<view class="container">
+    <view class='page-body'>
+        <view class='page-section'>
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+                <block wx:for="{{background}}" wx:key="swiper" wx:for-item="list" >
+                    <swiper-item>
+                        <image class="swiper_img" src='{{list.hrefs}}'></image>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+
+        <view class='detailTitle'>{{titleTxt}}</view>
+        <view style='display:none;'>{{imgs}}</view>
+        <view class='priceAndcollect'>
+            <view class='detailPrice now'>￥{{priceNow}}</view>
+            <text class='detailPrice before'>￥{{priceBefore}}</text>
+            <view class='detailCollect' bindtap='btns'>{{messmsg}}</view>
+        </view>
+        <view class='purchase'>
+            <!-- <view class='purchNumber'>购买数量:</view> -->
+            <!-- <view class='addre'>
+              <input type='text' class='prov'></input>
+              <input type='text' class='city'></input>
+              <input type='text' class='cside'></input>
+            </view> -->
+            <!-- 数量加减 -->
+            <view class="stepper">
+                <!-- 减号 -->
+                <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+                <!-- 数值 -->
+                <input type="number" bindchange="bindManual" value="{{num}}" />
+                <!-- 加号 -->
+                <text class="normal" bindtap="bindPlus">+</text>
+            </view>
+        </view>
+
+
+        <text style='font-size:15px; border: 1px dashed black; width:80rpx;'>商品详情</text>
+        <block wx:for-items="{{detailImg}}" wx:key="name">
+            <image class="image_detail" src="{{item.hrefs}}" />
+            <text>{{item.mess}}</text>
+        </block>
+
+
+        <view class='pageBottom'>
+            <navigator url='../comment/comment?kid={{id}}' class='shop' style='background-color:#ffffff'><icon class='iconfont icon-dianpu'></icon> 评价</navigator>
+            <view class='service' style='background-color:#ffffff'><icon class='iconfont icon-kefu'></icon> 客 服</view>
+            <view class='addcar' style='background-color:#1d262e' data-id='{{id}}' bindtap='inergwc'>加入购物车</view>
+            <view class='buy' style='background-color:#fcc600' data-id='{{id}}' bindtap='nowbuy'>立即购买</view>
+        </view>
+    </view>
+</view>

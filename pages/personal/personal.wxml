@@ -1,0 +1,39 @@
+<view class="tall">
+  <!-- 用户信息显示 -->
+  <view class='header'>
+    <image class='userImg' src='{{lis.imgs}}'></image>
+    <view class='userMsg'>
+      昵称：<text>{{lis.nickname}}\n</text>
+      地址：<text>{{lis.city}}</text>
+      <view class='usergf'>
+        <text>关注：23</text>
+        <text>粉丝：20</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 用户动态 -->
+ 
+     <view class='blog' wx:for='{{blog}}' wx:for-item='blog' wx:key='blog'>
+        <view class='blogUser'>
+            <image src='{{blog.imgs}}'></image>
+            <view class='blogInfo'>
+                <view style=' font-size: 15px;'>{{blog.nickname}}</view>
+                <view class='blogPlace iconfont icon-weizhi-tianchong'>{{blog.city}}</view>
+            </view>
+            <view class='blogConcern iconfont icon-guanzhu' bindtap='guan()'>关注一个</view>
+        </view>
+        <view class='blogVideo'>
+            <image src='{{blog.msgs}}' controls='true' direction='' style='width:99%;overflow:hidden;'></image>
+        </view>
+        <view class='blogContent'>
+            {{blog.contents}}
+        </view>
+        <view class='blogbottom'>
+            <view class='bnsbn'>{{blog.time}}</view>
+            <view class='bnb' data-id='{{blog.id}}' bindtap='remove'>移除</view>
+        </view>
+   
+  </view>
+
+</view>

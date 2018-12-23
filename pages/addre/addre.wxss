@@ -1,0 +1,60 @@
+.tall {
+    width: 100%;
+    height: 800rpx;
+    /* background: rgb(211, 211, 211); */
+}
+
+.te {
+  display: block;
+   margin-left:30rpx; 
+   /* width: 98%; */
+   margin-top: 30rpx;
+  font-size: 1.2em;
+  font-family: '楷体';
+  border-bottom: 1px dashed rgb(153, 153, 153);
+ 
+}
+
+.tbn {
+  width: 94%;
+  height: 80rpx;
+  font-size: 1.2em;
+  color: red;
+  font-family: '楷体';
+  line-height: 80rpx;
+  padding-left: 15rpx;
+   /* margin-top: 30rpx; */
+  /* margin-left: 30rpx; */
+  margin: 40rpx auto;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+.adre {
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+  height: 80rpx;
+  padding-left: 15rpx;
+  margin: 20rpx auto;
+  line-height: 80rpx;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+.tad {
+  width: 495rpx;
+  height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bon{
+  width: 100rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  /* font-size: .5em; */
+  margin-right: 5rpx;
+  
+  /* border: 1rpx solid black; */
+}
