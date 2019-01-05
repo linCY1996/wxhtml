@@ -1,4 +1,3 @@
-// pages/addre/addre.js
 var app = getApp()
 Page({
 
@@ -6,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    add:[],   //用户地址信息
+    ims: '' //评价
   },
 
   /**
@@ -15,37 +14,32 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:60/api/addr/show',
-      method:'get',
+      url: 'http://127.0.0.1:60/api/user/showsc',
+      method: 'get',
       data: {
-        id: app.globalData.userid
+        id: app.globalData.userid,
       },
-      header:{
-        'Content-Type':'application/json'
-      },
-      success:function(resp){
-        // console.log(resp)
+      success: function (resp) {
+        // console.log(resp.data)
         that.setData({
-          add :resp.data
+          ims: resp.data
         })
       }
-    })  
+    })
   },
-  remove:function(e){
-    // var $this = this;
-    // console.log(e.currentTarget.id)
-    // console.log()
+  remove: function (e) {
     var kid = e.currentTarget.dataset.id
+    // console.log(kid)
     wx.request({
-      url: 'http://127.0.0.1:60/api/remove/addre',
-      method:'post',
+      url: 'http://127.0.0.1:60/api/remove/commands',
+      method: 'post',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      data:{
-        id:kid
+      data: {
+        id: kid
       },
-      success:function(resp){
+      success: function (resp) {
         // console.log(resp)
         if (getCurrentPages().length != 0) {
           //刷新当前页面的数据
@@ -54,9 +48,5 @@ Page({
       }
 
     })
-  },
-  onShow:function(){
-    this.onLoad()
   }
-  
 })

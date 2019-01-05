@@ -1,0 +1,19 @@
+<view class='tall'>
+  <view class='coms'>我的收藏</view>
+
+  <view class='msgs' wx:for-items='{{ims}}' wx:key='ims'>
+    <!-- <view class='msgs'> -->
+    <view class='imgs'>
+      <image src='{{item.imgs}}'></image>
+    </view>
+    <view class='texts'>
+      <view class='textsch1'><text style='font-weight: bolder;font-family: "楷体";'>商品详情:</text>{{item.name}}</view>
+      <view class='times'>
+        <view class='timesch1'>¥{{item.price}}</view>
+        <!-- <view class='moves' data-id='{{item.id}}' bindtap='remove'>移除</view> -->
+        <view class='moves'>¥{{item.oldprice}}</view>
+        <view class='moves1' data-id='{{item.id}}' bindtap='remove'>移除</view>
+      </view>
+    </view>
+  </view>
+</view>

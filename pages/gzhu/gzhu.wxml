@@ -1,0 +1,41 @@
+<view style='background-color:white;'>
+  <!--视频达人 -->
+  <view class='supervideo' style='background-color:rgb(241, 241, 241);'>
+    <view class='supervideoTitle'>
+      <view class='iconfont icon-liulan-copy' style='font-size:16px'>您的关注</view>
+    </view>
+    <!-- <navigator url='../personal/personal?kid={{}}'> -->
+    <!-- <vi/ew> -->
+      <navigator url='../gzpersonal/gzpersonal?kid={{supervideo.id}}' class='supervideoItem' wx:for='{{supervideoItem}}' wx:for-item='supervideoItem' wx:key='supervideoItem' >
+        <!-- <image src='{{supervideo.imgs}}'></image>
+        <view class='supervideoName'>{{supervideo.nickname}}</view> -->
+        <image class='imgsss' src='{{supervideoItem.imgs}}'></image>
+        <view class='supervideoName'>{{supervideoItem.nickname}}</view>
+        <!-- <view class='imgsss'><open-data type="userAvatarUrl"></open-data></view>
+      <view class='supervideoName'><open-data type="userNickName"></open-data></view> -->
+        <!-- </view> -->
+      </navigator>
+    <!-- </view> -->
+  </view>
+
+  <!-- 日志分享 -->
+  <view class='blog' wx:for='{{blog}}' wx:for-item='blog' wx:key='blog'>
+    <view class='blogUser'>
+      <navigator url='../gzpersonal/gzpersonal?kid={{blog.userid}}'><image src='{{blog.imgs}}'></image></navigator> 
+      <view class='blogInfo'>
+        <view style=' font-size: 15px;'>{{blog.nickname}}</view>
+        <view class='blogPlace iconfont icon-weizhi-tianchong'>{{blog.city}}</view>
+      </view>
+      <view class='blogConcern iconfont icon-guanzhu' data-gzid='{{blog.userid}}' bindtap='guan'>{{msgguan}}</view>
+    </view>
+    <view class='blogVideo'>
+      <image src='{{blog.msgs}}' controls='true' direction=''></image>
+    </view>
+    <view class='blogContent'>{{blog.contents}}
+    </view>
+    <view class='blogbottom'>
+      {{blog.time}}
+    </view>
+  </view>
+
+</view>

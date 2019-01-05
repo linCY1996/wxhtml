@@ -6,11 +6,15 @@
     "pages/detail/detail",
     "pages/cart/cart",
     "pages/personal/personal",
-    "pages/upnews/upnews",
     "pages/addre/addre",
     "pages/uaddr/uaddr",
     "pages/comment/comment",
-    "pages/mycommand/mycom"
+    "pages/mycommand/mycom",
+    "pages/scang/scang",
+    "pages/gzhu/gzhu",
+    "pages/upfile/upfile",
+    "pages/gzpersonal/gzpersonal",
+    "pages/zuixin/zuixin"
   ],
   "requiredBackgroundModes": [
     "audio"

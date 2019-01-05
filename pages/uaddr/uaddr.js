@@ -197,7 +197,7 @@ Page({
     // console.log(this.data.ceshi)    
     // console.log(this.data.areaInfo)
     wx.request({
-      url: 'http://47.107.34.107:60/api/addr/address',
+      url: 'http://127.0.0.1:60/api/addr/address',
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"

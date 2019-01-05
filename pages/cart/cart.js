@@ -13,7 +13,7 @@ Page({
     onLoad:function(){
       var that = this
       wx.request({
-        url: 'http://47.107.34.107:60/api/show/goods',
+        url: 'http://127.0.0.1:60/api/show/goods',
         method:'get',
         data:{
           id: app.globalData.userid
@@ -55,7 +55,7 @@ Page({
         var index = e.currentTarget.dataset.id;
        
         wx.request({
-          url: 'http://47.107.34.107:60/api/remove/goods',
+          url: 'http://127.0.0.1:60/api/remove/goods',
           method:'post',
           header:{
             "Content-Type": "application/x-www-form-urlencoded"

@@ -16,7 +16,7 @@ Page({
         titleTxt:'',
         prcieNow:'',
         imgs:'',
-
+        priceBefore:'',
         // 数量加减
         // input默认是1
         num: 1,
@@ -32,7 +32,29 @@ Page({
         this.setData({
           messmsg: messmsg,
         });
-      // }
+      var price = this.data.priceNow
+      var name = this.data.titleTxt
+      var imgs = this.data.imgs
+      var priceBefore = this.data.priceBefore
+      // console.log(priceBefore)
+      wx.request({
+        url: 'http://127.0.0.1:60/api/user/inscang',
+        method:'POST',
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: {
+          id: app.globalData.userid,
+          price: price,
+          imgs: imgs,
+          name: name,
+          oldprice: priceBefore
+        },
+        success:function(resp) {
+          // console.log(resp)
+          // this.onLoad()
+        }
+      })
     },
   // 顶部导航选项卡
   navbarTap: function (e) {
@@ -84,7 +106,7 @@ Page({
       var id=e.kid
       // console.log(id)
       wx.request({
-        url: 'http://47.107.34.107:60/api/single/singlede',
+        url: 'http://127.0.0.1:60/api/single/singlede',
         method:'get',
         // header:{
         //   'Content-Type':'application/json'
@@ -98,7 +120,7 @@ Page({
         }
       });
       wx.request({
-        url: 'http://47.107.34.107:60/api/detail/viewbig',
+        url: 'http://127.0.0.1:60/api/detail/viewbig',
         method:'get',
         data:{kid:id},     
         success:function(resp){
@@ -108,7 +130,7 @@ Page({
         }
       }),
       wx.request({
-        url: 'http://47.107.34.107:60/api/deta/msgs',
+        url: 'http://127.0.0.1:60/api/deta/msgs',
         method: 'get',
         data: { kid: id },
         success: function (resp) {
@@ -131,7 +153,7 @@ Page({
       // console.log(e.currentTarget.dataset.id)
       // console.log(num)
       wx.request({
-        url: 'http://47.107.34.107:60/api/insert/gwc',
+        url: 'http://127.0.0.1:60/api/insert/gwc',
         method:'post',
         header:{
           "Content-Type": "application/x-www-form-urlencoded"
@@ -168,7 +190,7 @@ Page({
     // console.log(e.currentTarget.dataset.id)
     // console.log(num)
     wx.request({
-      url: 'http://47.107.34.107:60/api/now/buy',
+      url: 'http://127.0.0.1:60/api/now/buy',
       method: 'post',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"

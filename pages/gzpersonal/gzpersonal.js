@@ -5,15 +5,15 @@ Page({
   /**
    * 页面的初始数据
    */
-  data:{
-    lis:{},
-    blog:[],
+  data: {
+    lis: {},
+    blog: [],
     num: 1,
-    msgguan: '关注一个'
+    msgguan: '已关注'
   },
   guan: function () {
     var num = this.data.num;
-    var msgguan = (num % 2 == 0) ? '关注一个' : '已关注';
+    var msgguan = (num % 2 == 0) ? '已关注' : '取消关注';
     this.setData({
       msgguan: msgguan
     })
@@ -34,7 +34,7 @@ Page({
       // header: {
       //   'Content-Type': 'application/json'
       // },
-      
+
       success: function (resp) {
         // console.log(app.globalData.userid)
         // console.log(resp.data)
@@ -61,26 +61,4 @@ Page({
     });
   },
 
-  remove:function(e) {
-    var kids = e.currentTarget.dataset.id
-    // console.log(kid)
-    wx.request({
-      url: 'http://127.0.0.1:60/api/remove/usershow',
-      method: 'post',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        id: kids
-      },
-      success: function (resp) {
-        // console.log(resp)
-        if (getCurrentPages().length != 0) {
-          //刷新当前页面的数据
-          getCurrentPages()[getCurrentPages().length - 1].onLoad()
-        }
-      }
-
-    })
-  }
 })

@@ -32,7 +32,7 @@ Page({
       wx.login({
         success:function(resp){
           wx.request({
-            url: 'http://47.107.34.107:60/api/user/login',
+            url: 'http://127.0.0.1:60/api/user/login',
             method:'POST',
             header: {
               "Content-Type": "application/x-www-form-urlencoded"
@@ -91,7 +91,7 @@ Page({
   //   // console.log(app.globalData.openid)
     
   //   wx.request({
-  //     url: 'http://47.107.34.107:60/api/user/show',
+  //     url: 'http://127.0.0.1:60/api/user/show',
   //     data: {
   //       openid: app.globalData.openid
   //     },

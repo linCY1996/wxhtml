@@ -1,3 +1,4 @@
+/* pages/gzpersonal/gzpersonal.wxss */
 .tall {
   width: 100%;
   /* height: 800rpx; */

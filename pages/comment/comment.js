@@ -80,7 +80,7 @@ Page({
       // console.log(this.data.ims.imgs)
 
         wx.request({
-          url: 'http://47.107.34.107:60/api/detail/com',
+          url: 'http://127.0.0.1:60/api/detail/com',
           method:'post',
           header: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -113,7 +113,7 @@ Page({
     // console.log(id)
 
     wx.request({
-      url: 'http://47.107.34.107:60/api/user/judge',
+      url: 'http://127.0.0.1:60/api/user/judge',
       method:'get',
       data:{
         kid:id

@@ -1,0 +1,114 @@
+/* 模块二 */
+.supervideo{
+    width: 100%;
+    height: 300rpx;
+    /* margin-top: 25rpx; */
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    /* background-color: black; */
+}
+
+.supervideoTitle{
+    width: 100%;
+    height: 60rpx;
+    letter-spacing: 5rpx;
+    padding-left: 15rpx;
+    line-height: 60rpx;
+}
+
+.supervideoItem{
+    width: 20%;
+    height: 220rpx;
+    /* border: 1px solid rgb(194, 247, 247); */
+    margin: 20rpx;
+    text-align: center;
+    float: left;
+    /* display: flex;
+    flex: row; */
+}
+.imgsss{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin: 2rpx;
+    overflow: hidden;
+    border: 3px inset rgb(186, 233, 245);
+}
+.supervideoName{
+    width: 120rpx;
+    height: 50rpx;
+    margin: 3rpx 14rpx;
+    overflow: hidden;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.blog{
+    margin: 30rpx 20rpx;
+}
+.blogUser{
+    width: 100%;
+    height: 150rpx;
+    margin-top: 25rpx;
+    display: flex;
+    /* color: white; */
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.blogUser image{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin: 15rpx 20rpx;
+}
+.blogInfo view{
+    margin-top: 15rpx;
+}
+.blogPlace{
+    font-size: 14px;
+    color: gray;
+}
+.blogConcern{
+    width: 180rpx;
+    height: 90rpx;
+    border-radius: 20rpx;
+    background-color: #f8f9f4;
+    position: absolute;
+    right: 5%;
+    top:20%;
+    text-align: center;
+    line-height: 90rpx;
+    font-family: '黑体';
+    font-size: 14px;
+}
+
+.blogVideo image{
+    width: 100%;
+    height: 450rpx;
+    margin: 0 auto;
+}
+
+.blogContent{
+    width: 100%;
+    margin: 0 auto;
+    max-height: 120rpx;
+    /* text-indent: 50rpx; */
+    text-align: left;
+    font-size: 14px;
+    color: #a2a2a2;
+    line-height: 60rpx;
+    overflow: hidden;
+}
+.blogbottom{
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+    font-size: .8em;
+    color: #a2a2a2;
+    line-height: 50rpx;
+    flex-direction: row;
+    margin-top: 30rpx;
+}

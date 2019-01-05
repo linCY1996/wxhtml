@@ -11,14 +11,13 @@
 <view hidden="{{currentTab!==0}}">
   <!-- 轮播 -->
   <swiper class='swiper_box' indicator-dots='{{indicatorDots}}' indicator-color='{{beforeColor}}' indicator-active-color='{{afterColor}}' circular="true" interval='{{interval}}' duration='{{duration}}' autoplay='{{autoplay}}'>
-    <view wx:for='{{swiperList}}' wx:key="swiper">
-      <swiper-item class='swiper_item'>
-        <text class='swiper_txt'>{{item.msg}}</text>
-        <image class='swiper_img' src='{{item.imgs}}'></image>
-      </swiper-item>
-    </view>
-  </swiper>
-
+      <view wx:for='{{swiperList}}' wx:key="swiper">
+        <swiper-item class='swiper_item'>
+          <text class='swiper_txt'>{{item.msg}}</text>
+          <image class='swiper_img' src='{{item.imgs}}'></image>
+        </swiper-item>
+      </view>
+    </swiper>
   <!-- 商品标题 -->
   <view class='productTitle'>
     <text class='topTitle'>农家特产</text>
@@ -74,7 +73,7 @@
         <view style=' font-size: 15px;'>{{blog.nickname}}</view>
         <view class='blogPlace iconfont icon-weizhi-tianchong'>{{blog.city}}</view>
       </view>
-      <view class='blogConcern iconfont icon-guanzhu' bindtap='guan()'>关注一个</view>
+      <view class='blogConcern iconfont icon-guanzhu' data-userid='{{blog.userid}}' bindtap='guan'>{{msgguan}}</view>
     </view>
     <view class='blogVideo'>
       <image src='{{blog.msgs}}' controls='true' direction=''></image>
@@ -99,9 +98,17 @@
       <view class='nickname'><open-data type="userNickName"></open-data></view>
     </view>
     <view class='headerMenu'>
-      <view class='userInf' wx:for="{{userBox}}" wx:for-item="user" wx:key="userBox">
-        <view class='userBox'>{{user.userBox}}</view>
-        <view class='userNum'>{{user.userNum}}</view>
+      <view class='userInf'>
+        <navigator url='../scang/scang' class='userBox'>收藏夹</navigator>
+        <view class='userNum'>{{sccount}}</view>
+      </view>
+      <view class='userInf'>
+        <navigator url='../gzhu/gzhu' class='userBox'>关注</navigator>
+        <view class='userNum'>{{count}}</view>
+      </view>
+      <view class='userInf'>
+        <view class='userBox'>粉丝</view>
+        <view class='userNum'>6</view>
       </view>
     </view>
   </view>
@@ -124,14 +131,15 @@
   </view>
   <!-- 列表 -->
   <view class='entries'>
-    <navigator url='../upnews/upnews' class='entry'>
+    <navigator url='../upfile/upfile' class='entry'>
       <icon class='iconfont icon-webicon306'></icon>上传趣闻</navigator>
     <navigator url='../mycommand/mycom' class='entry'>
       <icon class='iconfont icon-comment-w'></icon>我的评价</navigator>
-    <view class='entry'>
-      <icon class='iconfont icon-shouhou'></icon>售后</view>
+    
     <navigator url='../addre/addre' class='entry'>
       <icon class='iconfont icon-changeAddress'></icon>收货地址</navigator>
+      <view class='entry'>
+      <icon class='iconfont icon-shouhou'></icon>售后</view>
     <view class='entry'>
       <icon class='iconfont icon-shezhi'></icon>设置</view>
   </view>

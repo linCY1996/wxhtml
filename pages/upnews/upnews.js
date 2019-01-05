@@ -93,7 +93,7 @@ Page({
     // console.log(app.globalData.city)
     // console.log(this.data.imgs)
     wx.request({
-      url: 'http://47.107.34.107:60/api/up/news',
+      url: 'http://127.0.0.1:60/api/up/news',
       method:'POST',
       header:{
         "Content-Type": "application/x-www-form-urlencoded"

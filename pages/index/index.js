@@ -5,7 +5,7 @@ Page({
     
 
     // 模块一
-    navbar: ['首页', '最新', '个人中心'],
+    navbar: ['首页', '最新', '个人'],
     currentTab: 0,
     autoplay: true,
     indicatorDots: true,
@@ -14,23 +14,11 @@ Page({
     beforeColor: "gray",
     afterColor: "orange",
     supervideoItem: {},
-    imss:'',
-    
-    // 模块三
-    userBox: [{
-        userBox: "收藏夹",
-        userNum: "6"
-      },
-      {
-        userBox: "关注",
-        userNum: "25"
-      },
-      {
-        userBox: "粉丝",
-        userNum: "2万"
-      }
-
-    ]
+    imss: '',
+    num: 1,
+    msgguan: '关注一个',
+    count: '0',
+    sccount: '0'
 
 
   },
@@ -41,11 +29,37 @@ Page({
     });
 
   },
+  guan: function (e) {
+    var that = this
+    // console.log(e.currentTarget.dataset.userid)
+    var num = this.data.num;
+    var msgguan = (num % 2 == 0) ? '关注一个' : '已关注';
+    this.setData({
+      msgguan: msgguan
+    })
+
+    // console.log(priceBefore)
+    wx.request({
+      url: 'http://127.0.0.1:60/api/user/gzhu',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        id: app.globalData.userid,
+        gid: e.currentTarget.dataset.userid
+      },
+      success: function (resp) {
+        that.onLoad()
+      }
+    })
+  },
+  
   onLoad: function() {
     var that = this
     //在个人中心显示用户头像昵称
     wx.request({
-      url: 'http://47.107.34.107:60/api/getgoods',
+      url: 'http://127.0.0.1:60/api/getgoods',
       method: 'get',
       
       header: {
@@ -58,7 +72,20 @@ Page({
       }
     });
     wx.request({
-      url: 'http://47.107.34.107:60/api/shou/lun',
+      url: 'http://127.0.0.1:60/api/new/usershow',
+      method: 'get',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (resp) {
+        // console.log(resp)
+        that.setData({
+          blog: resp.data
+        })
+      }
+    });
+    wx.request({
+      url: 'http://127.0.0.1:60/api/shou/lun',
       method: 'get',
       header: {
         'Content-Type': 'application/json'
@@ -69,8 +96,10 @@ Page({
         })
       }
     });
+    
     wx.request({
-      url: 'http://47.107.34.107:60/api/new/user',
+
+      url: 'http://127.0.0.1:60/api/new/user',
       method: 'get',
       header: {
         'Content-Type': 'application/json'
@@ -78,7 +107,7 @@ Page({
       data: {
         id: app.globalData.userid
       },
-      success: function(resp) {
+      success: function (resp) {
         // console.log(resp.data)
         that.setData({
           supervideoItem: resp.data
@@ -86,18 +115,31 @@ Page({
       }
     });
     wx.request({
-      url: 'http://47.107.34.107:60/api/new/usershow',
+      url: 'http://127.0.0.1:60/api/new/gzcount',
       method: 'get',
-      header: {
-        'Content-Type': 'application/json'
+      data: {
+        id: app.globalData.userid
       },
-      success: function(resp) {
+      success: function (resp) {
         // console.log(resp)
         that.setData({
-          blog: resp.data
+          count: resp.data
         })
       }
     });
+    wx.request({
+      url: 'http://127.0.0.1:60/api/new/sccount',
+      method: 'get',
+      data: {
+        id: app.globalData.userid
+      },
+      success: function (resp) {
+        // console.log(resp.data)
+        that.setData({
+          sccount: resp.data
+        })
+      }
+    })
   },
   onShow: function () {
     this.onLoad()
